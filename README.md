@@ -78,7 +78,7 @@ Each preset in `SITE_PRESETS` accepts the following fields:
 | `primaryCTA` | `{ label, href }` | Main call-to-action button — usually a mailto or form link |
 | `hubLink` | `string` | Must remain `HUB_LINK` — do not hard-code |
 | `company` | `string` | Legal company name for footer |
-| `localPresence` | `boolean` | Show Kasugai, Aichi local presence block when `true` |
+| `localPresence` | `boolean` | Show Osaka, Japan local presence block when `true` |
 | `socialProofBullets` | `string[]` | 3–5 short factual proof points shown on home |
 | `faq` | `FAQ[]` | Array of `{ question, answer }` — shown on /faq and previewed on home |
 | `noindex` | `boolean?` | Set `true` to add `Disallow: /` in robots.txt and `noindex,nofollow` meta |

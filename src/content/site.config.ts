@@ -331,10 +331,10 @@ export const SITE_PRESETS: Record<string, SiteConfig> = {
   // ── 5 ──────────────────────────────────────────────────────
   "japan-local-presence": {
     domain: "japan-local-presence.neoidigital.com",
-    siteName: "Japan Local Presence",
-    brandLine: "On-the-ground coordination in Japan for Malaysian exporters.",
+    siteName: "NeoiDigital",
+    brandLine: "Japan Local Presence",
     primaryIntent:
-      "We provide Japan-based local coordination so Malaysian companies can maintain relationships, attend meetings, and follow up without relocating.",
+      "Osaka-based coordination to support distributor meetings, follow-up, and relationship continuity for Malaysia exporters entering Japan.",
     mainKeywords: [
       "local presence in japan",
       "japan on the ground support",
@@ -344,56 +344,72 @@ export const SITE_PRESETS: Record<string, SiteConfig> = {
       "japan in market presence",
       "japan b2b meeting support",
       "japan relationship building support",
-      "osaka japan business support",
+      "osaka business support",
     ],
     longTailKeywords: [
       "why local presence in japan matters for b2b",
       "japan on the ground support for malaysian companies",
       "local presence in japan for distributor meetings",
-      "japan market entry with osaka japan based team",
+      "japan market entry with osaka based team",
       "japan follow up and relationship management service",
     ],
     primaryCTA: {
-      label: "Discuss Local Presence Options",
-      href: "mailto:hello@neoidigital.com?subject=Japan Local Presence",
+      label: "Request a local support call",
+      href: HUB_LINK,
     },
     hubLink: HUB_LINK,
     company: "NeoiDigital",
     localPresence: true,
     socialProofBullets: [
-      "Physical base in Osaka, Japan — central trade and distribution hub",
-      "Meeting attendance and bilingual facilitation",
-      "Regular relationship check-ins with distributors",
-      "No full relocation or Japan entity required",
-      "Transparent activity reporting to the Malaysia team",
+      "Meeting support: agenda alignment, briefing packs, and decision capture on-site.",
+      "Follow-up system: 48-hour recap, next-step scheduling, and cadence control.",
+      "Document handoffs: samples, specs, compliance notes, and buyer questions tracked.",
+      "Drop-off reduction: maintain continuity after introductions to prevent silence.",
+      "Osaka-based coordination for distributor visits and relationship continuity.",
     ],
     faq: [
       {
-        question: "Why does local presence matter in Japan specifically?",
+        question: "Why does local presence in Japan matter for B2B?",
         answer:
-          "Japanese B2B relationships are built on consistent in-person contact. Distributors and buyers want to know that their overseas partner has a reliable local point of contact who can respond quickly.",
+          "Japan B2B relies on continuity, documentation, and consistent in-person contact. Remote communication alone increases drop-off rates after introductions. Local presence provides a reliable point of contact who can respond quickly and maintain relationships on behalf of overseas companies.",
       },
       {
-        question: "Does my company need to set up a Japanese legal entity?",
+        question: "What does on-the-ground support include in practice?",
         answer:
-          "Not necessarily for initial market entry. Many companies begin with a coordinator arrangement before evaluating whether a formal entity is needed.",
+          "On-the-ground support includes meeting attendance and facilitation, distributor follow-up, document handoffs, bilingual recap preparation, and relationship maintenance. It is execution capacity, not a permanent office.",
       },
       {
-        question: "Where are you physically based in Japan?",
+        question: "Can you support distributor meetings in Japan?",
         answer:
-          "Our coordinator is based in Osaka, Japan — a central commercial hub with direct access to Tokyo, Nagoya, and key distribution networks across western Japan.",
+          "Yes. We handle pre-meeting alignment, agenda preparation, on-site facilitation, note-taking, and decision capture. We also schedule and coordinate follow-up touchpoints after each session.",
       },
       {
-        question: "What activities can your local coordinator handle?",
+        question: "How does follow-up work after meetings?",
         answer:
-          "Meeting attendance, distributor visits, trade show participation, material delivery, relationship maintenance, and market observation reports.",
+          "A bilingual recap is sent within 48 hours covering decisions, open items, and next steps. Action items are assigned, a next meeting date is proposed, and weekly cadence is maintained until a decision is reached.",
       },
       {
-        question: "How is progress reported back to our Malaysia team?",
+        question: "What deliverables do we receive after on-site support?",
         answer:
-          "We provide structured activity reports after each engagement — meeting notes, distributor feedback, and recommended next actions.",
+          "Standard deliverables include a meeting recap memo, a decision log (agreed, pending, blocked), a buyer requirements list, risk and compliance notes, a follow-up cadence plan, and a next-step decision memo.",
+      },
+      {
+        question: "How does local support reduce drop-off after introductions?",
+        answer:
+          "Drop-off typically occurs when recaps are delayed, next steps are unclear, or communication goes silent. Local support prevents this by capturing decisions immediately, sending recaps within 48 hours, and maintaining consistent follow-up cadence.",
+      },
+      {
+        question: "What should we prepare before requesting local support?",
+        answer:
+          "Prepare a product summary or specification, pricing and MOQ, a list of target distributor types or known contacts, and any existing certification credentials. The clearer your brief, the more productive the first engagement.",
+      },
+      {
+        question: "How does local support integrate with distributor search and trade shows?",
+        answer:
+          "Local presence works best as an ongoing layer alongside distributor search and trade show follow-up. After introductions are made, local support maintains momentum — handling recaps, scheduling next steps, and ensuring nothing falls through after the initial meeting.",
       },
     ],
+    noindex: false,
   },
 
   // ── 6 ──────────────────────────────────────────────────────
@@ -537,5 +553,5 @@ export const SITE_PRESETS: Record<string, SiteConfig> = {
 // ============================================================
 // ACTIVE SITE — change only this line per sub-site repo
 // ============================================================
-export const ACTIVE_SITE_KEY = "export-to-japan";
+export const ACTIVE_SITE_KEY = "japan-local-presence";
 export const siteConfig: SiteConfig = SITE_PRESETS[ACTIVE_SITE_KEY];
