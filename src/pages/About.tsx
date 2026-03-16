@@ -41,7 +41,7 @@ export default function About() {
           <h1 className="text-3xl font-semibold text-neutral-900 leading-tight mb-4">
             Japan Local Presence — Operational Overview
           </h1>
-          <p className="text-base text-neutral-600 leading-relaxed">
+          <p className="hero-lead text-base text-neutral-600 leading-relaxed">
             {siteConfig.primaryIntent}
           </p>
         </section>
@@ -183,6 +183,51 @@ export default function About() {
             </div>
           </section>
         )}
+
+        {/* Regulatory and institutional framework */}
+        <section className="border-t border-neutral-200 pt-10">
+          <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+            Regulatory and Institutional Context
+          </h2>
+          <div className="max-w-3xl space-y-3 text-sm text-neutral-700 leading-relaxed">
+            <p>
+              Foreign companies doing business in Japan operate within a
+              framework overseen by several government bodies.{" "}
+              <strong className="text-neutral-900">JETRO</strong> (Japan
+              External Trade Organization) is the primary agency that facilitates
+              inward investment and trade support for overseas companies. JETRO
+              provides market reports, business matching support, and advisory
+              services for companies establishing operations or partnerships in
+              Japan.
+            </p>
+            <p>
+              On the Malaysia side,{" "}
+              <strong className="text-neutral-900">MATRADE</strong> (Malaysia
+              External Trade Development Corporation) supports Malaysian
+              exporters through market access programmes, trade missions, and
+              export incentive frameworks — including those targeting the Japan
+              corridor.
+            </p>
+            <p>
+              The{" "}
+              <strong className="text-neutral-900">
+                Malaysia–Japan Economic Partnership Agreement (MJEPA)
+              </strong>{" "}
+              governs preferential tariff treatment. Exporters must meet rules of
+              origin criteria and submit certification through MITI or an
+              approved body. Category-specific requirements — including food
+              safety (under Japan's Food Sanitation Act), labelling (Food
+              Labelling Standards Act), and pharmaceutical regulations — are
+              enforced at the importer level.
+            </p>
+            <p>
+              Our coordination operates within this framework. We do not provide
+              legal or regulatory certification services, but we ensure that
+              documentation, timelines, and stakeholder communication align with
+              what Japan-side importers and distributors require.
+            </p>
+          </div>
+        </section>
 
         {/* Internal navigation */}
         <section className="border-t border-neutral-200 pt-10">

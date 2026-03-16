@@ -23,7 +23,7 @@ export default function FAQ() {
           <h1 className="text-3xl font-semibold text-neutral-900 leading-tight mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-base text-neutral-600 leading-relaxed mb-3">
+          <p className="hero-lead text-base text-neutral-600 leading-relaxed mb-3">
             Direct answers about Japan local presence, on-the-ground support,
             meeting coordination, and follow-up cadence.
           </p>
