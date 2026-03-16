@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import SEOHead from "../components/SEOHead";
 import CTA from "../components/CTA";
 import { siteConfig } from "../content/site.config";
+import { definedTermSetJsonLd, howToJsonLd } from "../lib/seo";
 
 const HOME_FAQ_JSONLD = {
   "@context": "https://schema.org",
@@ -78,6 +79,38 @@ const OSAKA_BULLETS = [
   "Practical on-the-ground logistics support.",
 ];
 
+const HOME_DEFINED_TERMS = definedTermSetJsonLd([
+  {
+    term: "Local Presence",
+    description:
+      "Execution capacity in Japan — meeting support, follow-up cadence, and document handoffs — not a registered office or forwarding address.",
+  },
+  {
+    term: "Follow-Up Cadence",
+    description:
+      "A structured communication rhythm maintained after meetings: bilingual recaps within 48 hours, action-item assignment, next-meeting scheduling, and weekly contact until a decision threshold is reached.",
+  },
+  {
+    term: "Drop-Off Reduction",
+    description:
+      "Preventing post-introduction silence by capturing decisions immediately, sending timely recaps, and maintaining consistent follow-up cadence with Japan distributors.",
+  },
+  {
+    term: "Document Handoff",
+    description:
+      "Structured transfer of samples, specifications, compliance notes, buyer requirements, and decision logs between meeting participants and stakeholders.",
+  },
+]);
+
+const HOME_HOWTO = howToJsonLd(
+  "How to Coordinate a Distributor Meeting in Japan",
+  "Step-by-step local presence process for supporting B2B distributor meetings in Japan, from agenda alignment through follow-up scheduling.",
+  MEETING_SUPPORT_TASKS.map((task) => {
+    const name = task.replace(/\.$/, "");
+    return { name, text: name };
+  }),
+);
+
 export default function Home() {
   const title = "Japan Local Presence — Osaka B2B Coordinator | NeoiDigital";
   const description =
@@ -85,7 +118,13 @@ export default function Home() {
 
   return (
     <>
-      <SEOHead path="/" title={title} description={description} isHome={true} />
+      <SEOHead
+        path="/"
+        title={title}
+        description={description}
+        isHome={true}
+        extraSchemas={[HOME_DEFINED_TERMS, HOME_HOWTO]}
+      />
 
       <Helmet>
         <script type="application/ld+json">
@@ -103,7 +142,7 @@ export default function Home() {
           <h1 className="text-3xl font-semibold text-neutral-900 leading-tight mb-4">
             Japan Local Presence
           </h1>
-          <p className="text-sm text-neutral-600 leading-relaxed mb-8">
+          <p className="hero-lead text-sm text-neutral-600 leading-relaxed mb-8">
             NeoiDigital provides local presence in japan from Osaka — meeting
             support, follow-up cadence, and document handoffs to keep Japan B2B
             conversations moving.
