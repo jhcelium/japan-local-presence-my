@@ -34,6 +34,8 @@ export type SiteConfig = {
   hubLink: string;
   /** Legal company name for footer */
   company: string;
+  /** Legal entity name for JSON-LD (optional) */
+  legalName?: string;
   /** Show Osaka, Japan local-presence block when true */
   localPresence: boolean;
   /** Social-proof bullets (3–5 short factual points) */
@@ -359,6 +361,7 @@ export const SITE_PRESETS: Record<string, SiteConfig> = {
     },
     hubLink: HUB_LINK,
     company: "NeoiDigital",
+    legalName: "ネオインスパイア株式会社",
     localPresence: true,
     socialProofBullets: [
       "Meeting support: agenda alignment, briefing packs, and decision capture on-site.",

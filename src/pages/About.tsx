@@ -1,30 +1,31 @@
+import { Link } from "react-router-dom";
 import SEOHead from "../components/SEOHead";
 import CTA from "../components/CTA";
 import { siteConfig } from "../content/site.config";
-import { pageTitle } from "../lib/seo";
 
-const DELIVERABLES = [
+const OPERATIONAL_CAPABILITIES = [
   {
-    title: "Export Readiness Assessment",
-    body: "Structured review of your product's commercial fit for Japan — covering pricing, certification gaps, labelling requirements, and category timing.",
+    title: "Meeting Support",
+    body: "Agenda alignment, pre-meeting briefing packs, on-site facilitation, note-taking, decision capture, and next-step clarification before leaving the room.",
   },
   {
-    title: "Distributor Selection Report",
-    body: "A shortlist of 3–5 qualified Japan-side distribution candidates, pre-screened for category fit, market coverage, and willingness to engage.",
+    title: "Follow-Up Cadence",
+    body: "Bilingual recap within 48 hours covering decisions, open items, and action assignments. Weekly cadence maintained until a decision threshold is reached.",
   },
   {
-    title: "Trade Show Preparation & Follow-up",
-    body: "Pre-show briefing on relevant buyer and distributor profiles, on-the-ground support during show days, and post-show contact follow-up.",
+    title: "Document Handoffs",
+    body: "Samples, specs, compliance notes, buyer requirements, and decision logs tracked and handed off in structured format — not as ad-hoc emails.",
   },
   {
-    title: "On-the-ground Coordination",
-    body: "Japan-based coordinator available for distributor meetings, relationship maintenance, material delivery, and structured activity reporting.",
+    title: "Drop-Off Prevention",
+    body: "Most overseas supplier relationships stall after initial introduction. We hold the thread between meetings and prevent communication gaps from becoming disqualifications.",
   },
 ];
 
 export default function About() {
-  const title = pageTitle("About");
-  const description = `About ${siteConfig.siteName}. We help Malaysian exporters and SMEs enter the Japan B2B market through structured market entry support.`;
+  const title = "About — Japan Local Presence Operations | NeoiDigital";
+  const description =
+    "On-the-ground Japan coordination from Osaka: meeting support, follow-up discipline, and relationship continuity for Malaysia exporters entering Japan B2B.";
 
   return (
     <>
@@ -38,38 +39,109 @@ export default function About() {
             About
           </p>
           <h1 className="text-3xl font-semibold text-neutral-900 leading-tight mb-4">
-            {siteConfig.siteName}
+            Japan Local Presence — Operational Overview
           </h1>
           <p className="text-base text-neutral-600 leading-relaxed">
             {siteConfig.primaryIntent}
           </p>
         </section>
 
-        {/* Who we help */}
+        {/* What local presence means here */}
         <section className="border-t border-neutral-200 pt-10">
-          <h2 className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-6">
-            Who We Help
+          <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+            What Local Presence Means in Practice
           </h2>
-          <div className="max-w-2xl space-y-4 text-sm text-neutral-700 leading-relaxed">
+          <div className="max-w-3xl space-y-3 text-sm text-neutral-700 leading-relaxed">
             <p>
-              We work with Malaysian SMEs and exporters who are evaluating Japan as a target market or have already decided to enter and need structured support.
+              Local presence is not a registered office or a forwarding address.
+              It is execution capacity — the ability to be in the room, capture
+              what happened, and maintain the relationship after the meeting
+              ends.
             </p>
             <p>
-              Our typical clients are manufacturers, food producers, health and wellness brands, and industrial suppliers who have a product ready for export but lack Japan-specific knowledge and local contacts.
+              For Malaysia exporters working with Japan distributors, the gap
+              between a first meeting and a commercial relationship is filled
+              with follow-through: recaps, document handoffs, next-step
+              scheduling, and consistent availability. That is what this service
+              provides.
             </p>
             <p>
-              We also work with ASEAN-based companies seeking the Malaysia–Japan trade corridor as their first developed-market entry.
+              We do not replace your sales process. We support the Japan-side
+              execution layer — the part that requires someone physically present
+              and operationally consistent.
             </p>
           </div>
         </section>
 
-        {/* What we deliver */}
+        {/* Japan relationship context */}
         <section className="border-t border-neutral-200 pt-10">
-          <h2 className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-6">
+          <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+            Japan's Relationship-Based Business Culture
+          </h2>
+          <div className="max-w-3xl space-y-3 text-sm text-neutral-700 leading-relaxed">
+            <p>
+              Japan's B2B environment operates on documented continuity and
+              in-person trust. Distributors assess not just the product but the
+              supplier's reliability as a long-term partner. Consistency of
+              communication — its speed, accuracy, and format — is part of the
+              evaluation.
+            </p>
+            <p>
+              Remote-only communication carries a structural disadvantage in
+              this context. When a distributor has a question and the response
+              takes three days, the gap is interpreted as operational capacity
+              risk, not a time-zone inconvenience. Local presence closes that
+              gap.
+            </p>
+            <p>
+              Introductions in Japan's B2B market are formal, often facilitated
+              through a trusted intermediary, and carry implicit expectations
+              about what happens next. The post-introduction phase — follow-up,
+              documentation, meeting scheduling — is where most overseas
+              suppliers lose momentum.
+            </p>
+          </div>
+        </section>
+
+        {/* Follow-up discipline */}
+        <section className="border-t border-neutral-200 pt-10">
+          <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+            Follow-Up as a Managed System
+          </h2>
+          <div className="max-w-3xl space-y-3 text-sm text-neutral-700 leading-relaxed">
+            <p>
+              Follow-up in the Japan B2B context is not a single email after a
+              meeting. It is a system: structured recaps, assigned action items,
+              scheduled next touchpoints, and escalation protocols when
+              communication stalls.
+            </p>
+            <p>
+              Our process: a bilingual recap is prepared within 48 hours of each
+              meeting. It covers decisions made, open items, agreed next steps,
+              and action owners. A next meeting date is proposed at the point of
+              recap distribution — not left as a follow-up item.
+            </p>
+            <p>
+              Weekly cadence is maintained until the engagement reaches a
+              threshold: a commercial agreement, a qualified no, or a defined
+              pause. When silence occurs on the distributor side, we trigger
+              re-engagement rather than waiting.
+            </p>
+            <p>
+              This discipline is what converts introductions into active
+              relationships. Without it, the default outcome is drop-off within
+              4–6 weeks of the first meeting.
+            </p>
+          </div>
+        </section>
+
+        {/* Operational capabilities */}
+        <section className="border-t border-neutral-200 pt-10">
+          <h2 className="text-xl font-semibold text-neutral-900 mb-6">
             What We Deliver
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {DELIVERABLES.map((item) => (
+            {OPERATIONAL_CAPABILITIES.map((item) => (
               <div key={item.title} className="border border-neutral-200 p-5">
                 <h3 className="text-sm font-semibold text-neutral-900 mb-2">
                   {item.title}
@@ -82,26 +154,56 @@ export default function About() {
           </div>
         </section>
 
-        {/* Where we operate */}
+        {/* Osaka base */}
         {siteConfig.localPresence && (
           <section className="border-t border-neutral-200 pt-10">
-            <h2 className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-6">
-              Where We Operate
+            <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+              Operational Base: Osaka, Japan
             </h2>
-            <div className="max-w-2xl space-y-4 text-sm text-neutral-700 leading-relaxed">
+            <div className="max-w-3xl space-y-3 text-sm text-neutral-700 leading-relaxed">
               <p>
-                Our Japan-side coordinator is based in{" "}
-                <strong className="text-neutral-900">Osaka, Japan</strong> — a central commercial hub with direct access to Tokyo, Nagoya, and key B2B trade channels across western Japan.
+                Coordination operates from{" "}
+                <strong className="text-neutral-900">Osaka, Japan</strong> —
+                providing practical access to Kansai-region distributor
+                networks, with direct travel routes to Tokyo and Nagoya for
+                broader coverage.
               </p>
               <p>
-                Osaka provides practical access to Japan's distribution networks and serves as a base for meeting distributors, attending trade shows, and maintaining ongoing relationships without requiring our clients to relocate or establish a Japan entity.
+                Osaka is Japan's second commercial hub, with strong distribution
+                infrastructure across food and beverage, industrial, and
+                consumer goods categories. For Malaysia exporters, an
+                Osaka-based coordinator reduces response time and logistics
+                friction compared to remote coordination.
               </p>
               <p>
-                Our Malaysia-side coordination is conducted remotely, with structured reporting back to your team after each Japan-side engagement.
+                Malaysia-side planning and briefing are handled remotely, with
+                structured reporting back to your team after each Japan-side
+                engagement. No Japanese entity or relocation is required.
               </p>
             </div>
           </section>
         )}
+
+        {/* Internal navigation */}
+        <section className="border-t border-neutral-200 pt-10">
+          <h2 className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-5">
+            Related Pages
+          </h2>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              to="/"
+              className="text-sm font-medium text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+            >
+              ← Japan Local Presence — Home
+            </Link>
+            <Link
+              to="/faq"
+              className="text-sm font-medium text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+            >
+              Frequently Asked Questions →
+            </Link>
+          </div>
+        </section>
 
         {/* Hub link */}
         <section className="border-t border-neutral-200 pt-10">
@@ -109,7 +211,9 @@ export default function About() {
             Part of NeoiDigital Japan Market Hub
           </h2>
           <p className="text-sm text-neutral-600 mb-5 max-w-xl leading-relaxed">
-            This site is part of a broader set of Japan market entry resources for Malaysian companies. The hub aggregates tools, guides, and consulting pathways across the full export journey.
+            This site is part of a broader set of Japan market resources for
+            Malaysian companies. The hub covers distributor search, trade show
+            support, export readiness, and market entry strategy.
           </p>
           <a
             href={siteConfig.hubLink}
@@ -125,10 +229,12 @@ export default function About() {
         <section className="border-t border-neutral-200 pt-10">
           <div className="max-w-xl">
             <h2 className="text-xl font-semibold text-neutral-900 mb-3">
-              Start with a direct conversation.
+              Discuss your Japan coordination needs.
             </h2>
             <p className="text-sm text-neutral-500 mb-6 leading-relaxed">
-              We review your product and situation before recommending any specific service. Tell us what you are working with.
+              Tell us your distributor situation, meeting cadence requirements,
+              or where follow-up has stalled. We work from a brief, not a
+              template.
             </p>
             <CTA />
           </div>

@@ -19,16 +19,63 @@ export function orgJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.company,
+    ...(siteConfig.legalName && { legalName: siteConfig.legalName }),
     url: `https://${siteConfig.domain}`,
     description: siteConfig.primaryIntent,
+    areaServed: "JP",
+    knowsAbout: [...siteConfig.mainKeywords, ...siteConfig.supportingKeywords],
     ...(siteConfig.localPresence && {
       address: {
         "@type": "PostalAddress",
         addressLocality: "Osaka",
-        addressRegion: "Osaka",
+        addressRegion: "Osaka Prefecture",
         addressCountry: "JP",
       },
     }),
+  };
+}
+
+/** JSON-LD: ProfessionalService (local presence / on-the-ground coordination) */
+export function professionalServiceJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: `${siteConfig.company} — ${siteConfig.brandLine}`,
+    description: siteConfig.primaryIntent,
+    url: `https://${siteConfig.domain}`,
+    serviceType: "On-the-ground business coordination",
+    areaServed: {
+      "@type": "Country",
+      name: "Japan",
+    },
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.company,
+      ...(siteConfig.legalName && { legalName: siteConfig.legalName }),
+    },
+    ...(siteConfig.localPresence && {
+      location: {
+        "@type": "Place",
+        name: "Osaka",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Osaka",
+          addressRegion: "Osaka Prefecture",
+          addressCountry: "JP",
+        },
+      },
+    }),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Local Presence Services",
+      itemListElement: siteConfig.socialProofBullets.map((bullet) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          description: bullet,
+        },
+      })),
+    },
   };
 }
 

@@ -6,6 +6,7 @@ import {
   webSiteJsonLd,
   webPageJsonLd,
   faqPageJsonLd,
+  professionalServiceJsonLd,
 } from "../lib/seo";
 
 type Props = {
@@ -13,9 +14,16 @@ type Props = {
   title: string;
   description: string;
   isFaq?: boolean;
+  isHome?: boolean;
 };
 
-export default function SEOHead({ path, title, description, isFaq = false }: Props) {
+export default function SEOHead({
+  path,
+  title,
+  description,
+  isFaq = false,
+  isHome = false,
+}: Props) {
   const canonical = canonicalUrl(path);
   const robotsContent = siteConfig.noindex ? "noindex,nofollow" : "index,follow";
 
@@ -24,6 +32,7 @@ export default function SEOHead({ path, title, description, isFaq = false }: Pro
     webSiteJsonLd(),
     webPageJsonLd(path, title, description),
     ...(isFaq ? [faqPageJsonLd()] : []),
+    ...(isHome ? [professionalServiceJsonLd()] : []),
   ];
 
   return (
@@ -34,6 +43,7 @@ export default function SEOHead({ path, title, description, isFaq = false }: Pro
       <meta name="robots" content={robotsContent} />
 
       {/* Open Graph */}
+      <meta property="og:locale" content="en_US" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />

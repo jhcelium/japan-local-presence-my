@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import SEOHead from "../components/SEOHead";
 import CTA from "../components/CTA";
 import { siteConfig } from "../content/site.config";
-import { pageTitle } from "../lib/seo";
 
 const HOME_FAQ_JSONLD = {
   "@context": "https://schema.org",
@@ -80,12 +79,13 @@ const OSAKA_BULLETS = [
 ];
 
 export default function Home() {
-  const title = pageTitle();
-  const description = `${siteConfig.brandLine} — ${siteConfig.primaryIntent}`;
+  const title = "Japan Local Presence — Osaka B2B Coordinator | NeoiDigital";
+  const description =
+    "NeoiDigital provides local presence in Japan from Osaka — meeting support, follow-up cadence, and document handoffs for Malaysia exporters in Japan B2B.";
 
   return (
     <>
-      <SEOHead path="/" title={title} description={description} />
+      <SEOHead path="/" title={title} description={description} isHome={true} />
 
       <Helmet>
         <script type="application/ld+json">
