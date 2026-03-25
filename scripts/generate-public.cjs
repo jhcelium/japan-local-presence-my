@@ -34,7 +34,8 @@ if (keyIndex === -1) {
 // Slice from the key to a reasonable preset block end
 const blockStart = keyIndex;
 // Find the matching closing brace for this preset (heuristic: next top-level "," + newline + 2 spaces)
-const rawBlock = src.slice(blockStart, blockStart + 4000);
+// Large enough to include full `faq` arrays with slugs (japan-local-presence exceeds 4k).
+const rawBlock = src.slice(blockStart, blockStart + 20000);
 
 // ── Extract domain ────────────────────────────────────────────
 const domainMatch = rawBlock.match(/domain\s*:\s*["']([^"']+)["']/);
@@ -49,9 +50,18 @@ const noindex = noindexMatch ? noindexMatch[1] === "true" : false;
 const today = new Date().toISOString().split("T")[0];
 const baseUrl = "https://" + domain;
 
-const sitemap = [
-  '<?xml version="1.0" encoding="UTF-8"?>',
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+const faqMarker = rawBlock.indexOf("faq:");
+const noindexMarker = rawBlock.indexOf("noindex:", faqMarker);
+const faqSegment =
+  faqMarker >= 0 && noindexMarker > faqMarker
+    ? rawBlock.slice(faqMarker, noindexMarker)
+    : "";
+const faqSlugMatches = [...faqSegment.matchAll(/slug:\s*"([^"]+)"/g)];
+const faqSlugs = faqSlugMatches.map(function (m) {
+  return m[1];
+});
+
+const urlRows = [
   "  <url>",
   "    <loc>" + baseUrl + "/</loc>",
   "    <lastmod>" + today + "</lastmod>",
@@ -68,8 +78,23 @@ const sitemap = [
   "    <loc>" + baseUrl + "/faq/</loc>",
   "    <lastmod>" + today + "</lastmod>",
   "    <changefreq>monthly</changefreq>",
-  "    <priority>0.8</priority>",
+  "    <priority>0.9</priority>",
   "  </url>",
+];
+
+faqSlugs.forEach(function (slug) {
+  urlRows.push("  <url>");
+  urlRows.push("    <loc>" + baseUrl + "/faq/" + slug + "/</loc>");
+  urlRows.push("    <lastmod>" + today + "</lastmod>");
+  urlRows.push("    <changefreq>monthly</changefreq>");
+  urlRows.push("    <priority>0.7</priority>");
+  urlRows.push("  </url>");
+});
+
+const sitemap = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  urlRows.join("\n"),
   "</urlset>",
   "",
 ].join("\n");

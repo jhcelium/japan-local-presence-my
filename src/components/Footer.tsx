@@ -33,7 +33,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="text-sm text-neutral-500 hover:text-neutral-900">
+                <Link to="/faq/" className="text-sm text-neutral-500 hover:text-neutral-900">
                   FAQ
                 </Link>
               </li>

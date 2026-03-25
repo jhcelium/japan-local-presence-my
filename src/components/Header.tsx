@@ -45,7 +45,7 @@ export default function Header() {
             About
           </NavLink>
           <NavLink
-            to="/faq"
+            to="/faq/"
             className={({ isActive }) =>
               `text-sm ${isActive ? "text-neutral-900 font-medium" : "text-neutral-500 hover:text-neutral-900"}`
             }

@@ -387,16 +387,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* J — FAQ Preview */}
+        {/* J — FAQ pathway + preview */}
         <section className="border-t border-neutral-200 pt-10">
-          <h2 className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-6">
+          <h2 className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-4">
             Common Questions
           </h2>
+          <p className="text-sm text-neutral-600 leading-relaxed mb-6 max-w-2xl">
+            The{" "}
+            <Link
+              to="/faq/"
+              className="font-medium text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
+            >
+              FAQ hub
+            </Link>{" "}
+            covers local presence, on-the-ground support, follow-up, and
+            relationship continuity in Japan — with full answer pages for each
+            topic.
+          </p>
           <dl className="divide-y divide-neutral-200">
             {siteConfig.faq.slice(0, 3).map((item) => (
               <div key={item.question} className="py-6">
                 <dt className="text-sm font-semibold text-neutral-900 mb-2">
-                  {item.question}
+                  {item.slug ? (
+                    <Link
+                      to={`/faq/${item.slug}/`}
+                      className="hover:text-neutral-600 underline-offset-2 hover:underline"
+                    >
+                      {item.question}
+                    </Link>
+                  ) : (
+                    item.question
+                  )}
                 </dt>
                 <dd className="text-sm text-neutral-600 leading-relaxed">
                   {item.answer}
@@ -404,12 +425,12 @@ export default function Home() {
               </div>
             ))}
           </dl>
-          <div className="mt-4">
+          <div className="mt-6">
             <Link
-              to="/faq"
+              to="/faq/"
               className="text-sm font-medium text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
             >
-              View all frequently asked questions →
+              Open the FAQ hub — all questions →
             </Link>
           </div>
         </section>
