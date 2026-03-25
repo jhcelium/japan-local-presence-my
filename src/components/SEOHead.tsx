@@ -6,6 +6,7 @@ import {
   webSiteJsonLd,
   webPageJsonLd,
   faqPageJsonLd,
+  faqPageSingleJsonLd,
   professionalServiceJsonLd,
 } from "../lib/seo";
 
@@ -13,7 +14,10 @@ type Props = {
   path: string;
   title: string;
   description: string;
+  /** Full FAQ index — all Q&A in one FAQPage */
   isFaq?: boolean;
+  /** Single answer page — one Question in FAQPage */
+  faqSingleItem?: { question: string; answer: string };
   isHome?: boolean;
   extraSchemas?: Record<string, unknown>[];
 };
@@ -23,6 +27,7 @@ export default function SEOHead({
   title,
   description,
   isFaq = false,
+  faqSingleItem,
   isHome = false,
   extraSchemas = [],
 }: Props) {
@@ -35,6 +40,7 @@ export default function SEOHead({
     webSiteJsonLd(),
     webPageJsonLd(path, title, description),
     ...(isFaq ? [faqPageJsonLd()] : []),
+    ...(faqSingleItem ? [faqPageSingleJsonLd(faqSingleItem)] : []),
     ...(isHome ? [professionalServiceJsonLd()] : []),
     ...extraSchemas,
   ];

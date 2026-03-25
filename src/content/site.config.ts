@@ -6,6 +6,8 @@
 export type FAQ = {
   question: string;
   answer: string;
+  /** URL segment for /faq/{slug}/ answer pages (optional; hub falls back to inline list if missing) */
+  slug?: string;
 };
 
 export type CTA = {
@@ -372,41 +374,49 @@ export const SITE_PRESETS: Record<string, SiteConfig> = {
     ],
     faq: [
       {
+        slug: "why-local-presence-japan-b2b",
         question: "Why does local presence in Japan matter for B2B?",
         answer:
           "Japan B2B relies on continuity, documentation, and consistent in-person contact. Remote communication alone increases drop-off rates after introductions. Local presence provides a reliable point of contact who can respond quickly and maintain relationships on behalf of overseas companies.",
       },
       {
+        slug: "on-the-ground-support-practice",
         question: "What does on-the-ground support include in practice?",
         answer:
           "On-the-ground support includes meeting attendance and facilitation, distributor follow-up, document handoffs, bilingual recap preparation, and relationship maintenance. It is execution capacity, not a permanent office.",
       },
       {
+        slug: "distributor-meetings-japan",
         question: "Can you support distributor meetings in Japan?",
         answer:
           "Yes. We handle pre-meeting alignment, agenda preparation, on-site facilitation, note-taking, and decision capture. We also schedule and coordinate follow-up touchpoints after each session.",
       },
       {
+        slug: "follow-up-after-meetings",
         question: "How does follow-up work after meetings?",
         answer:
           "A bilingual recap is sent within 48 hours covering decisions, open items, and next steps. Action items are assigned, a next meeting date is proposed, and weekly cadence is maintained until a decision is reached.",
       },
       {
+        slug: "on-site-support-deliverables",
         question: "What deliverables do we receive after on-site support?",
         answer:
           "Standard deliverables include a meeting recap memo, a decision log (agreed, pending, blocked), a buyer requirements list, risk and compliance notes, a follow-up cadence plan, and a next-step decision memo.",
       },
       {
+        slug: "reduce-drop-off-after-introductions",
         question: "How does local support reduce drop-off after introductions?",
         answer:
           "Drop-off typically occurs when recaps are delayed, next steps are unclear, or communication goes silent. Local support prevents this by capturing decisions immediately, sending recaps within 48 hours, and maintaining consistent follow-up cadence.",
       },
       {
+        slug: "prepare-before-local-support",
         question: "What should we prepare before requesting local support?",
         answer:
           "Prepare a product summary or specification, pricing and MOQ, a list of target distributor types or known contacts, and any existing certification credentials. The clearer your brief, the more productive the first engagement.",
       },
       {
+        slug: "local-support-distributor-search-trade-shows",
         question: "How does local support integrate with distributor search and trade shows?",
         answer:
           "Local presence works best as an ongoing layer alongside distributor search and trade show follow-up. After introductions are made, local support maintains momentum — handling recaps, scheduling next steps, and ensuring nothing falls through after the initial meeting.",

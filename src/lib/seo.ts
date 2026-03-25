@@ -162,6 +162,28 @@ export function faqPageJsonLd() {
   };
 }
 
+/** JSON-LD: FAQPage — single Q&A answer asset */
+export function faqPageSingleJsonLd(item: { question: string; answer: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".faq-answer-lead"],
+    },
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      },
+    ],
+  };
+}
+
 /**
  * JSON-LD: DefinedTermSet — key terminology definitions.
  * Use on pages that explicitly define domain terms.

@@ -242,7 +242,7 @@ export default function About() {
               ← Japan Local Presence — Home
             </Link>
             <Link
-              to="/faq"
+              to="/faq/"
               className="text-sm font-medium text-neutral-900 underline underline-offset-2 hover:text-neutral-600"
             >
               Frequently Asked Questions →
