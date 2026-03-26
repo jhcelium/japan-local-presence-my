@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import FAQAnswer from "./pages/FAQAnswer";
+import FAQWhyLocalPresenceJapan from "./pages/FAQWhyLocalPresenceJapan";
 
 export default function App() {
   return (
@@ -18,6 +19,32 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route
+                path="/faq/why-does-local-presence-matter-in-japan"
+                element={<FAQWhyLocalPresenceJapan />}
+              />
+              <Route
+                path="/faq/why-does-local-presence-matter-in-japan/"
+                element={<FAQWhyLocalPresenceJapan />}
+              />
+              <Route
+                path="/faq/why-local-presence-japan-b2b"
+                element={
+                  <Navigate
+                    to="/faq/why-does-local-presence-matter-in-japan/"
+                    replace
+                  />
+                }
+              />
+              <Route
+                path="/faq/why-local-presence-japan-b2b/"
+                element={
+                  <Navigate
+                    to="/faq/why-does-local-presence-matter-in-japan/"
+                    replace
+                  />
+                }
+              />
               <Route path="/faq/:slug" element={<FAQAnswer />} />
             </Routes>
           </div>

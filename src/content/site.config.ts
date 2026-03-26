@@ -374,10 +374,10 @@ export const SITE_PRESETS: Record<string, SiteConfig> = {
     ],
     faq: [
       {
-        slug: "why-local-presence-japan-b2b",
-        question: "Why does local presence in Japan matter for B2B?",
+        slug: "why-does-local-presence-matter-in-japan",
+        question: "Why Does Local Presence Matter in Japan?",
         answer:
-          "Japan B2B relies on continuity, documentation, and consistent in-person contact. Remote communication alone increases drop-off rates after introductions. Local presence provides a reliable point of contact who can respond quickly and maintain relationships on behalf of overseas companies.",
+          "In Japan, B2B progress depends on continuity: documented next steps, timely follow-up, and proof of engagement after the first meeting. Local presence supplies on-site execution where remote-only coordination often loses momentum.",
       },
       {
         slug: "on-the-ground-support-practice",

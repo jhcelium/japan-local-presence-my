@@ -11,10 +11,10 @@ const HOME_FAQ_JSONLD = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Why does local presence in Japan matter for B2B?",
+      name: "Why Does Local Presence Matter in Japan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Japan B2B relies on continuity, documentation, and consistent in-person contact. Remote communication alone increases drop-off after introductions. Local presence provides a reliable point of contact who maintains relationships on behalf of overseas companies.",
+        text: "In Japan, B2B progress depends on continuity: documented next steps, timely follow-up, and proof of engagement after the first meeting. Local presence supplies on-site execution where remote-only coordination often loses momentum.",
       },
     },
     {
